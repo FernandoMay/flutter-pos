@@ -23,7 +23,7 @@ class _Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final supplier = Provider.of<OrderSupplier>(context);
-    final headline6Style = Theme.of(context).textTheme.headline6!;
+    final headline6Style = Theme.of(context).textTheme.titleLarge!;
     final priceAfterDisc = supplier.totalPriceAfterDiscount;
     return SafeArea(
       child: ListTile(

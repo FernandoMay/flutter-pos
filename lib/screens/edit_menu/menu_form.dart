@@ -50,7 +50,7 @@ class FormContent extends StatelessWidget {
             ],
           ),
           SizedBox(height: gap), // additional gap to button
-          ButtonBar(
+          OverflowBar(
             children: [
               if (onCancel != null)
                 TextButton(

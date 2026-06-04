@@ -37,7 +37,7 @@ class HistoryScreen extends StatelessWidget {
               ),
               Text(
                 AppLocalizations.of(context)?.history_toggleDiscount ?? 'Apply Discount Rate',
-                style: Theme.of(context).textTheme.caption?.apply(fontSizeFactor: 0.5),
+                style: Theme.of(context).textTheme.bodySmall?.apply(fontSizeFactor: 0.5),
               ),
             ],
           ),
@@ -46,7 +46,7 @@ class HistoryScreen extends StatelessWidget {
           Theme(
             data: Theme.of(context).copyWith(
               textTheme: Theme.of(context).textTheme.copyWith(
-                    bodyText1: GoogleFonts.eczar(fontSize: 20),
+                    bodyLarge: GoogleFonts.eczar(fontSize: 20),
                   ),
             ),
             child: DatePicker(),
@@ -101,7 +101,7 @@ class _LeadingTitle extends StatelessWidget {
         ),
         Text(
           '(${Common.extractYYYYMMDD2(range.start)} - ${Common.extractYYYYMMDD2(range.end)})',
-          style: Theme.of(context).textTheme.caption,
+          style: Theme.of(context).textTheme.bodySmall,
         ),
       ],
     );

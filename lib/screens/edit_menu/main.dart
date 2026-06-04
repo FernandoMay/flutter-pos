@@ -109,7 +109,7 @@ class _ListItem extends HookWidget {
             Text(dish.dish),
             Chip(
               label: Text(Money.format(dish.price)),
-              labelStyle: Theme.of(context).textTheme.caption,
+              labelStyle: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),
