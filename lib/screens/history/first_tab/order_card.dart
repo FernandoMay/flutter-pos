@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../../l10n/app_localizations.dart';
 
 import '../../../common/common.dart';
 import '../../../provider/src.dart';
@@ -34,12 +34,12 @@ class OrderCard extends StatelessWidget {
             key: ObjectKey(order),
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: del == true ? Colors.grey[400]!.withOpacity(0.5) : null,
+                backgroundColor: del == true ? Colors.grey[400]!.withValues(alpha: 0.5) : null,
                 child: Text(order.id.toString()),
               ),
               title: Text(
                 Common.extractYYYYMMDD3(order.checkoutTime),
-                style: del == true ? TextStyle(color: Colors.grey[200]!.withOpacity(0.5)) : null,
+                style: del == true ? TextStyle(color: Colors.grey[200]!.withValues(alpha: 0.5)) : null,
               ),
               onLongPress: del == true
                   ? null
@@ -68,7 +68,7 @@ class OrderCard extends StatelessWidget {
                 Money.format(order.saleAmount(discountFlag)),
                 style: TextStyle(
                   letterSpacing: 3,
-                  color: del == true ? Colors.grey[200]!.withOpacity(0.5) : Colors.lightGreen,
+                  color: del == true ? Colors.grey[200]!.withValues(alpha: 0.5) : Colors.lightGreen,
                   fontSize: 20,
                 ),
               ),

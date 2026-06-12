@@ -1,10 +1,8 @@
-# Simple-POS
+# POSApp
 
-### ❤️❤️ [Online Demo](https://tcd93.github.io/flutter-pos)❤️❤️
+A mobile POS (Point of Sale) system for small restaurants, written in Flutter.
 
-A mobile POS written in _Flutter_, suitable for small cafe/restaurant, fully offline.
-
-**Tested & printable on **Sunmi V1S** device.**
+**Tested & printable on Sunmi V1S device.**
 
 ![sunmi_v1s](.github/resource/print.jpg)
 
@@ -34,9 +32,62 @@ flutter run
 **For emulator**
 1. `flutter run`
 
+## Features
+
+- Table management with drag-and-drop layout
+- Menu management with image support
+- Order processing with discount options
+- Sales history and reporting
+- Expense journal
+- Thermal receipt printing (Bluetooth)
+- Local storage (SQLite / LocalStorage)
+
+## Architecture
+
+Provider-based architecture:
+- **provider/** — State management (Order, Menu, Config suppliers)
+- **screens/** — UI screens (Lobby, Menu, Order Details, History, Edit Menu, Expense Journal)
+- **storage_engines/** — Database connections (SQLite, Local Storage)
+- **theme/** — Material 3 theme with brand colors
+- **common/** — Shared widgets (Radial Menu, Draggable, Money format)
+
 ## Testing
 
-`flutter test`
+```bash
+flutter test
+```
 
-## TODO
-- [ ] Remote printing? (via Bluetooth)
+## Build
+
+```bash
+flutter pub get
+flutter run                          # Run on connected device/emulator
+flutter build apk --debug            # Debug APK
+flutter build apk --release          # Release APK
+```
+
+### Web
+```bash
+flutter config --enable-web
+flutter run -d web-server            # Run on web
+flutter build web                    # Build for web
+```
+
+## Deploy
+
+### Android
+1. Bump version in `pubspec.yaml`
+2. Run `flutter build apk --release` or `flutter build appbundle --release`
+3. Upload to Google Play Console
+
+### Web (GitHub Pages)
+1. Run `flutter build web`
+2. Deploy `build/web` to GitHub Pages or any static host
+
+## CI/CD
+
+This project uses GitHub Actions for CI. See `.github/workflows/flutter.yml`.
+
+## License
+
+MIT - POSApp

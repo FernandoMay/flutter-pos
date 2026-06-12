@@ -263,7 +263,7 @@ class OrderSQL extends RIDRepository<Order>
   }
 }
 
-class JournalSQL extends RIRepository<Journal> with Readable<Journal>, Insertable<Journal> {
+class JournalSQL extends RIRepository<Journal> implements Readable<Journal>, Insertable<Journal> {
   final Database db;
   JournalSQL(this.db);
 
@@ -312,7 +312,7 @@ class JournalSQL extends RIRepository<Journal> with Readable<Journal>, Insertabl
 }
 
 class MenuSQL extends RIUDRepository<Dish>
-    with Readable<Dish>, Updatable<Dish>, Insertable<Dish>, Deletable<Dish> {
+    implements Readable<Dish>, Updatable<Dish>, Insertable<Dish>, Deletable<Dish> {
   final Database db;
 
   MenuSQL(this.db);
@@ -364,7 +364,7 @@ class MenuSQL extends RIUDRepository<Dish>
 }
 
 class NodeSQL extends RIUDRepository<Node>
-    with Readable<Node>, Updatable<Node>, Insertable<Node>, Deletable<Node> {
+    implements Readable<Node>, Updatable<Node>, Insertable<Node>, Deletable<Node> {
   final Database db;
 
   NodeSQL(this.db);

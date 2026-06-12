@@ -103,7 +103,7 @@ class HistoryOrderLineChart extends StatelessWidget {
       color: RallyColors.primaryColor,
       barWidth: 2,
       isStrokeCapRound: true,
-      dotData: FlDotData(show: true),
+      dotData: const FlDotData(show: true),
       isCurved: true,
       curveSmoothness: 0.2,
       preventCurveOverShooting: true,
@@ -165,10 +165,10 @@ class HistoryOrderLineChart extends StatelessWidget {
                       },
                     ),
                   ),
-                  topTitles: AxisTitles(),
-                  rightTitles: AxisTitles(),
+                  topTitles: const AxisTitles(),
+                  rightTitles: const AxisTitles(),
                 ),
-                gridData: FlGridData(show: false),
+                gridData: const FlGridData(show: false),
                 minY: 0.0,
                 showingTooltipIndicators: showTooltipsOnAllSpots
                     ? [

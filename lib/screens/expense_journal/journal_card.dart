@@ -24,7 +24,7 @@ class JournalCard extends StatelessWidget {
         key: ObjectKey(journal),
         child: ListTile(
           leading: CircleAvatar(child: Text(journal.id.toString())),
-          title: Text(journal.entry, overflow: TextOverflow.ellipsis, textScaleFactor: 0.85),
+          title: Text(journal.entry, overflow: TextOverflow.ellipsis, textScaler: const TextScaler.linear(0.85)),
           subtitle: Text(Common.extractYYYYMMDD3(journal.dateTime)),
           trailing: Text(
             Money.format(journal.amount),

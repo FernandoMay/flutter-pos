@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../l10n/app_localizations.dart';
 
 import '../../common/common.dart' show Money, MoneyFormatter, NumberEL100Formatter;
 import '../../theme/rally.dart';
@@ -45,6 +45,7 @@ class _CheckoutButton extends StatelessWidget {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width / 2,
         onPressed: () async {
+          // ignore: use_build_context_synchronously
           final navState = Navigator.of(context);
           if (fromScreen == 'history') {
             await supplier.printClear(context: context);

@@ -49,10 +49,10 @@ class CustomScaffold extends HookWidget {
           expanded,
           child: Padding(
             padding: const EdgeInsets.only(top: 70.0, left: 70.0, right: 70.0),
-            child: WillPopScope(
-              onWillPop: () async {
-                expanded.value = false;
-                return false;
+            child: PopScope(
+              canPop: false,
+              onPopInvokedWithResult: (didPop, _) {
+                if (!didPop) expanded.value = false;
               },
               child: FormContent(
                 inputs: buildInputs(context, dishNameController, priceController),

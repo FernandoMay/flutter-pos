@@ -22,9 +22,11 @@ class DrawerItem extends StatelessWidget {
 
     return Transform(
       transform: Matrix4.identity()
-        ..translate(
+        ..translateByDouble(
           (translation.value) * cos(rad),
           (translation.value) * sin(rad),
+          0.0,
+          0.0,
         ),
       child: child,
     );

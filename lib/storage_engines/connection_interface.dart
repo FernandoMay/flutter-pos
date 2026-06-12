@@ -27,19 +27,19 @@ class Control {
 
 typedef QueryKey<C> = Comparable<C>;
 
-abstract class Readable<T> {
+abstract mixin class Readable<T> {
   Future<List<T>> get([QueryKey? from, QueryKey? to]);
 }
 
-abstract class Insertable<T> {
+abstract mixin class Insertable<T> {
   Future<T> insert(T value);
 }
 
-abstract class Deletable<T> {
+abstract mixin class Deletable<T> {
   Future<void> delete(T value);
 }
 
-abstract class Updatable<T> {
+abstract mixin class Updatable<T> {
   Future<void> update(T value);
 
   Future<void> upsert(T value) => throw UnimplementedError();
@@ -67,7 +67,7 @@ class JournalIO {
   Future<void> insertJournal(Journal journal) => Future.value();
 }
 
-class TableIO {
+mixin class TableIO {
   Future<List<int>> tableIDs() => Future.value([]);
 
   Future<int> addTable() => Future.value(-1);
@@ -75,7 +75,7 @@ class TableIO {
   Future<void> removeTable(int tableID) => Future.value();
 }
 
-class CoordinateIO {
+mixin class CoordinateIO {
   /// Saves the table node's position on lobby screen to storage
   Future<void> setCoordinate(int tableID, double x, double y) => Future.value();
 

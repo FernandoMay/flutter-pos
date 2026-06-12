@@ -18,9 +18,15 @@ class RallyColors {
 
 ThemeData buildTheme() {
   final base = ThemeData.dark();
+  final colorScheme = ColorScheme.fromSeed(
+    seedColor: const Color(0xFFD32F2F),
+    brightness: Brightness.dark,
+  );
   return ThemeData(
+    useMaterial3: true,
+    colorScheme: colorScheme,
     appBarTheme: const AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.dark, elevation: 0),
-    bottomSheetTheme: BottomSheetThemeData(backgroundColor: base.bottomAppBarColor),
+    bottomSheetTheme: BottomSheetThemeData(backgroundColor: colorScheme.surface),
     textTheme: _buildTextTheme(base.textTheme),
     pageTransitionsTheme: const PageTransitionsTheme(builders: {
       TargetPlatform.android: SharedAxisPageTransitionsBuilder(
@@ -29,63 +35,47 @@ ThemeData buildTheme() {
       ),
       TargetPlatform.windows: ZoomPageTransitionsBuilder(),
     }),
-    scaffoldBackgroundColor: RallyColors.primaryBackground,
-    primaryColor: RallyColors.primaryBackground,
+    scaffoldBackgroundColor: colorScheme.surface,
+    primaryColor: colorScheme.primary,
     focusColor: RallyColors.focusColor,
-    chipTheme: const ChipThemeData(
-      backgroundColor: RallyColors.primaryColor,
+    chipTheme: ChipThemeData(
+      backgroundColor: colorScheme.primary,
     ),
-    cardTheme: const CardTheme(
+    cardTheme: const CardThemeData(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
       elevation: 0.0,
-      color: RallyColors.cardBackground,
-    ),
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: RallyColors.buttonColor,
-    ),
-    bottomAppBarTheme: const BottomAppBarTheme(
-      shape: AutomaticNotchedShape(
-        ContinuousRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(72.0),
-            topRight: Radius.circular(72.0),
-          ),
-        ),
-        CircleBorder(),
-      ),
     ),
     buttonTheme: const ButtonThemeData(
       height: bottomNavbarHeight,
     ),
-    highlightColor: RallyColors.primaryColor,
+    highlightColor: colorScheme.primary,
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        foregroundColor: RallyColors.focusColor,
+        foregroundColor: colorScheme.onSurface,
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        foregroundColor: RallyColors.buttonColor,
+        foregroundColor: colorScheme.onPrimary,
+        backgroundColor: colorScheme.primary,
       ),
     ),
-    canvasColor: RallyColors.primaryBackground, // also works for dropdown button
-    dialogTheme: const DialogTheme(
+    canvasColor: colorScheme.surface,
+    dialogTheme: DialogThemeData(
       elevation: 36.0,
-      backgroundColor: RallyColors.primaryBackground,
+      backgroundColor: colorScheme.surface,
     ),
-    colorScheme: const ColorScheme.dark(), // for date range picker
     inputDecorationTheme: InputDecorationTheme(
-      labelStyle: const TextStyle(
-        color: RallyColors.gray,
+      labelStyle: TextStyle(
+        color: colorScheme.onSurfaceVariant,
         fontWeight: FontWeight.w500,
       ),
       hintStyle: TextStyle(
-        color: RallyColors.gray.withOpacity(0.5),
+        color: colorScheme.onSurfaceVariant.withValues(alpha: 0.5),
         fontWeight: FontWeight.w300,
       ),
-      // border: InputBorder.none,
-      focusedBorder: const OutlineInputBorder(
-        borderSide: BorderSide(color: RallyColors.primaryColor),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: colorScheme.primary),
       ),
       contentPadding: const EdgeInsets.all(4.0),
     ),

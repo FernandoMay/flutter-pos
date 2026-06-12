@@ -33,19 +33,15 @@ dependencies:
   sqflite_common_ffi:
   path:
   localstorage: ^4.0.0+1
-  image_picker: ^0.8.4
-  image_picker_for_web: ^2.0.0
+  image_picker: ^1.0.0
+  image_picker_for_web: ^3.0.0
   blue_thermal_printer:
     git:
       url: https://github.com/tcd93/blue_thermal_printer
       ref: master
-  google_fonts: ^3.0.1
-  date_range_picker:
-    git:
-      url: https://github.com/tcd93/date_range_picker
-      ref: master
-  fl_chart: ^0.55.0
-  flutter_hooks: ^0.18.0
+  google_fonts: ^6.2.1
+  fl_chart: ^1.0.0
+  flutter_hooks: ^0.21.0
   vector_math: ^2.1.2
 
   # The following adds the Cupertino Icons font to your application.
